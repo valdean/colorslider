@@ -25,15 +25,11 @@ class ViewController: UIViewController {
 
     @IBAction func changeColorComponent(sender: AnyObject) {
         
-        let r: Float = self.redControl.value
-        let g: Float = self.greenControl.value
-        let b: Float = self.blueControl.value
+        let r: CGFloat = CGFloat(self.redControl.value)
+        let g: CGFloat = CGFloat(self.greenControl.value)
+        let b: CGFloat = CGFloat(self.blueControl.value)
         
-        let cgr: CGFloat = CGFloat(r)
-        let cgg: CGFloat = CGFloat(g)
-        let cgb: CGFloat = CGFloat(b)
-        
-        colorView.backgroundColor = UIColor(red: cgr, green: cgg, blue: cgb, alpha: 1.0)
+        colorView.backgroundColor = UIColor(red: r, green: g, blue: b, alpha: 1.0)
         
     }
     
