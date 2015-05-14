@@ -25,10 +25,6 @@
                                         <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="dQU-BR-BGZ">
-                                        <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
-                                        <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Green" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X3P-M0-ixx">
                                         <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
@@ -38,6 +34,9 @@
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="d3o-Zs-fP1">
                                         <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
                                         <color key="tintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="changeColorComponent:" destination="BYZ-38-t0r" eventType="valueChanged" id="Biv-fw-kEk"/>
+                                        </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blue" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lnb-ZS-p5m">
                                         <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -47,9 +46,19 @@
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="BfE-pN-vQX">
                                         <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
+                                        <connections>
+                                            <action selector="changeColorComponent:" destination="BYZ-38-t0r" eventType="valueChanged" id="8vX-Tr-d7L"/>
+                                        </connections>
+                                    </slider>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="dQU-BR-BGZ">
+                                        <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
+                                        <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="changeColorComponent:" destination="BYZ-38-t0r" eventType="valueChanged" id="C81-sG-GlC"/>
+                                        </connections>
                                     </slider>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="X3P-M0-ixx" firstAttribute="top" secondItem="h67-RU-meZ" secondAttribute="bottom" constant="23" id="7RA-FH-JHA"/>
                                     <constraint firstItem="lnb-ZS-p5m" firstAttribute="top" secondItem="X3P-M0-ixx" secondAttribute="bottom" constant="25" id="9HT-Kh-2d8"/>
@@ -72,11 +81,11 @@
                                 <variation key="default">
                                     <mask key="subviews">
                                         <exclude reference="h67-RU-meZ"/>
-                                        <exclude reference="dQU-BR-BGZ"/>
                                         <exclude reference="X3P-M0-ixx"/>
                                         <exclude reference="d3o-Zs-fP1"/>
                                         <exclude reference="lnb-ZS-p5m"/>
                                         <exclude reference="BfE-pN-vQX"/>
+                                        <exclude reference="dQU-BR-BGZ"/>
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="euf-Qs-j2c"/>
@@ -101,11 +110,11 @@
                                 <variation key="heightClass=regular">
                                     <mask key="subviews">
                                         <include reference="h67-RU-meZ"/>
-                                        <include reference="dQU-BR-BGZ"/>
                                         <include reference="X3P-M0-ixx"/>
                                         <include reference="d3o-Zs-fP1"/>
                                         <include reference="lnb-ZS-p5m"/>
                                         <include reference="BfE-pN-vQX"/>
+                                        <include reference="dQU-BR-BGZ"/>
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="euf-Qs-j2c"/>
@@ -133,7 +142,7 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nWi-j6-cK6">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="155" id="E0i-dI-ZGz"/>
                                             <constraint firstAttribute="width" constant="350" id="RKB-N5-pYw"/>
@@ -227,6 +236,12 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="blueControl" destination="BfE-pN-vQX" id="mfa-dY-ieJ"/>
+                        <outlet property="colorView" destination="nWi-j6-cK6" id="wM9-7X-gX7"/>
+                        <outlet property="greenControl" destination="d3o-Zs-fP1" id="Laj-Mz-1yb"/>
+                        <outlet property="redControl" destination="dQU-BR-BGZ" id="yNT-Y2-KZZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
